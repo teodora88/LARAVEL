@@ -15,6 +15,16 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
+        $password = Hash::make('admin');
+        $faker = \Faker\Factory::create();
 
+        for ($i = 0; $i < 20; $i++) {
+
+            User::create([
+                'name' => $faker->name,
+                'email' => $faker->email,
+                'password' => $password,
+            ]);
+        }
     }
 }

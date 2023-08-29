@@ -14,6 +14,16 @@ class ProizvodTableSeeder extends Seeder
      */
     public function run()
     {
+        $faker = \Faker\Factory::create();
 
+        for ($i = 0; $i < 30; $i++) {
+
+            Proizvod::create([
+                'naziv' => ucfirst($faker->word()),
+                'brendID' => rand(1,3),
+                'tipID' => rand(1,3), 
+                'cena' => $faker->numberBetween(550, 5550)
+            ]);
+        }
     }
 }
