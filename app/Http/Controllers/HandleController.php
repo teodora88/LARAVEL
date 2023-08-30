@@ -10,7 +10,7 @@ class HandleController extends Controller
     /**
      * @return \Illuminate\Http\Response
      */
-    public function uspesniOdgovor($podaci, $poruka)
+    public function uspesno($podaci, $poruka)
     {
         $odgovor = [
             'uspesno' => true,
@@ -25,13 +25,17 @@ class HandleController extends Controller
     /**
      * @return \Illuminate\Http\Response
      */
-    public function greskaOdgovor($greska, $code = 404)
+    public function greska($greska, $nizGresaka = [], $code = 404)
     {
         $odgovor = [
             'uspesno' => false,
             'poruka' => $greska,
         ];
-        
+
+        if(!empty($nizGresaka)){
+            $odgovor['podaci'] = $nizGresaka;
+        }
+
         return response()->json($odgovor, $code);
     }
 }
