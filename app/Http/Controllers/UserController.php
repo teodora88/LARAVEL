@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
 
 class UserController extends HandleController
 {
-    public function prijava(Request $request)
+    public function register(Request $request)
     {
         $uspesnoLogovanje = Auth::attempt(['email' => $request->email, 'password' => $request->password]);
 
@@ -25,7 +25,7 @@ class UserController extends HandleController
         }
     }
 
-    public function registracija(Request $request)
+    public function login(Request $request)
     {
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);

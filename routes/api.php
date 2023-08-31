@@ -15,5 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});
 
+Route::post('login', [UserController::class, 'login']);
+Route::post('register', [UserController::class, 'register']);
+
+Route::middleware('auth:sanctum')->group( function () {
+    Route::resource('brendovi', \App\Http\Controllers\BrendController::class);
+    Route::resource('tipovi', \App\Http\Controllers\TipController::class);
+    Route::resource('proizvodi', \App\Http\Controllers\ProizvodController::class);
+});
 
