@@ -16,12 +16,15 @@ class ProizvodResurs extends JsonResource
      */
     public function toArray($request)
     {
+        $brend = Brend::find($this->brendID);
+        $tip = Tip::find($this->tipID);
+
         return [
             'id' => $this->id,
             'naziv' => $this->naziv,
-            'brend' => $this->brendID,
-            'tip' => $this->tipID,
-            'cena' => $this->cena
+            'brend' => $brend->brend,
+            'tip' => $tip->tip,
+            'cena' => $this->cena . " RSD"
         ];
     }
 }
