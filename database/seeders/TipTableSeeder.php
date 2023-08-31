@@ -15,15 +15,15 @@ class TipTableSeeder extends Seeder
     public function run()
     {
         Tip::create([
-            'tip' => 'A'
+            'tip' => 'Nega lica'
         ]);
 
         Tip::create([
-            'tip' => 'B'
+            'tip' => 'Nega tela'
         ]);
 
         Tip::create([
-            'tip' => 'C'
+            'tip' => 'Nega kose'
         ]);
     }
 

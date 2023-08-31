@@ -20,7 +20,7 @@ class ProizvodTableSeeder extends Seeder
 
             Proizvod::create([
                 'naziv' => ucfirst($faker->word()),
-                'brendID' => rand(1,3),
+                'brendID' => rand(1,6),
                 'tipID' => rand(1,3), 
                 'cena' => $faker->numberBetween(550, 5550)
             ]);

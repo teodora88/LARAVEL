@@ -15,15 +15,27 @@ class BrendTableSeeder extends Seeder
     public function run()
     {
         Brend::create([
-            'brend' => 'A'
+            'brend' => 'Vichy'
         ]);
 
         Brend::create([
-            'brend' => 'B'
+            'brend' => 'The Ordinary'
         ]);
 
         Brend::create([
-            'brend' => 'C'
+            'brend' => 'CeraVe'
+        ]);
+
+        Brend::create([
+            'brend' => 'Biotherm'
+        ]);
+
+        Brend::create([
+            'brend' => 'Eucerin'
+        ]);
+
+        Brend::create([
+            'brend' => 'NEOGEN'
         ]);
 
     }
